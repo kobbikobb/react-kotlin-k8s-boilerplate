@@ -1,0 +1,44 @@
+# Gradle files
+.gradle/
+build/
+out/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Kotlin files
+*.class
+*.jar
+*.war
+*.iml
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+*.class
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# JetBrains specific files
+.idea/
+*.ipr
+*.iws
+
+# Environment files
+.env
+*.env.local
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Docker files
+*.tar
+*.gz
