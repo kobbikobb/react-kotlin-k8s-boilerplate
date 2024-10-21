@@ -5,10 +5,11 @@ FROM gradle:7.6.0-jdk17 as build
 WORKDIR /app
 
 # Copy the project files to the working directory
-COPY . .
+COPY build.gradle.kts settings.gradle.kts ./
+COPY src ./src
 
 # Build the project
-RUN gradle installDist
+RUN gradle --no-daemon installDist
 
 # Use a lightweight JDK image for the final stage
 FROM openjdk:17-jdk-slim
@@ -23,4 +24,4 @@ COPY --from=build /app/build/install/api /app
 EXPOSE 8080
 
 # Run the application
-CMD ["./bin/api"]
+CMD ["/app/bin/api"]

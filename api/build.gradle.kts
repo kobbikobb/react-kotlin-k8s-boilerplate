@@ -8,6 +8,17 @@ application {
     mainClass.set("com.kobbikobb.ApiAppKt")
 }
 
+kotlin {
+    jvmToolchain {
+        (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
+tasks.withType<JavaCompile> {
+    sourceCompatibility = "17"
+    targetCompatibility = "17"
+}
+
 repositories {
     mavenCentral()
 }
